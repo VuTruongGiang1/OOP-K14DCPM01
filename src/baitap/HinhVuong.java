@@ -1,7 +1,6 @@
 package baitap;
 
 public class HinhVuong {
-    String color;
     double square;
 
     void xoayHV(){

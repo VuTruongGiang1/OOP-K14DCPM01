@@ -1,7 +1,6 @@
 package baitap;
 
 public class HinhTamGiac {
-    String color;
     double circle;
 
     void xoayHTG(){

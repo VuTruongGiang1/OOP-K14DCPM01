@@ -1,7 +1,6 @@
 package baitap;
 
 public class HinhTron {
-    String color;
     double triangle;
 
     void xoayHT(){
