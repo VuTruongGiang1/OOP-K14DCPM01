@@ -1,4 +1,4 @@
-package oop;
+package oo;
 
 public class AccountTestDrive {
     public static void main(String[] args) {
