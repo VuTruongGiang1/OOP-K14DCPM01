@@ -35,7 +35,7 @@ public class GiaoDichDat extends GiaoDichNhaDat{
         dienTich = in.nextDouble();
     }
 
-    public double ttien(){
+    public Double ttien(){
     if(loaiB || loaiC){
         return this.thanhTien = this.dienTich*this.donGia;
     }else{

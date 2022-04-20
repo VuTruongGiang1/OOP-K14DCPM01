@@ -4,6 +4,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 
+import oo.tuan04.buoi8.HangThucPham;
+
 public class WritingObject {
     public static void main(String[] args) throws IOException{
         //1.
@@ -13,7 +15,7 @@ public class WritingObject {
         ObjectOutputStream objOut = new ObjectOutputStream(outFile);
 
         //HangThucPham
-        HangThucPham htp = new HangThucPham("HTP01", "Mi Hao Hao", 3_500, new Date(), new Date());
+        HangThucPham htp = new HangThucPham();
 
         //3.
         objOut.writeObject(htp);
