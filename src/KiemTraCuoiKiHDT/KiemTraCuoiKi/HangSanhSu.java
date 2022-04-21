@@ -40,6 +40,6 @@ public class HangSanhSu extends HangHoa{
     @Override
     public String toString() {
         String str = DanhSachHangHoa.simpleDateFormat.format(getNgayNhapKho());
-        return super.toString()+ "Nha san xuat: " +getNhaSanXuat()+ "Ngay nhap kho: " +str+ "Thue: " +getThue()+ "Danh gia hang sanh su: " +getDanhGia();
+        return super.toString()+"  " + "Nha san xuat: " +getNhaSanXuat()+"  " + "Ngay nhap kho: " +str+"  " + "Thue: " +getThue()+"  " + "Danh gia hang sanh su: " +getDanhGia();
     }
 }

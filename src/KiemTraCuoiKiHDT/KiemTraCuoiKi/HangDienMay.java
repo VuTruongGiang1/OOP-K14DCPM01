@@ -36,6 +36,6 @@ public class HangDienMay extends HangHoa{
  
     @Override
     public String toString() {
-        return super.toString()+ "Thoi gian bao hanh (thang): " +gettGBaoHanh()+ "Cong suat KW: " +getCongSuatKW()+"Thue: "+getThue()+ "Danh gia hang dien may: " +getDanhGia();
+        return super.toString()+"  " + "Thoi gian bao hanh (thang): " +gettGBaoHanh()+"  " + "Cong suat KW: " +getCongSuatKW()+"  " +"Thue: "+getThue()+"  " + "Danh gia hang dien may: " +getDanhGia();
     }
 }

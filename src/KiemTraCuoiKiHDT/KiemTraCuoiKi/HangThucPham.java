@@ -46,6 +46,6 @@ public class HangThucPham extends HangHoa{
     public String toString() {
         String str1 = DanhSachHangHoa.simpleDateFormat.format(getNgaySX());
         String str2 = DanhSachHangHoa.simpleDateFormat.format(getNgayHetHan());   
-        return super.toString()+ "Ngay san xuat: " +str1+ "Ngay het han: " +str2+ "Nha cung cap: "+getNhaCungCap()+ "Thue: " +getThue()+ "Danh gia: " +getDanhGia();
+        return super.toString()+"  " + "Ngay san xuat: " + str1+"  " + "Ngay het han: " +str2+"  " + "Nha cung cap: "+getNhaCungCap()+"  " +"Thue: " +getThue()+"  " + "Danh gia: " +getDanhGia();
     }
 }

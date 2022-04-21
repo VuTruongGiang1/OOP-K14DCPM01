@@ -14,7 +14,7 @@ public class Main {
         menu();
     }
     static void menu() {
-        System.out.println("============MENU============");
+        System.out.println("=============MENU=============");
         System.out.println("1.Them hang hoa");
         System.out.println("2.Xuat hang hoa");
         System.out.println("3.Tim kiem hang hoa theo ma");
@@ -24,7 +24,7 @@ public class Main {
         System.out.println("7.Sap xep hang hoa giam dan theo don gia");
         System.out.println("8.Thong ke hang hoa");
         System.out.println("9. Thoat!!!");
-        System.out.println("============MENU============");
+        System.out.println("=============MENU=============");
         System.out.print("Nhap so: ");
         String n = DanhSachHangHoa.chu.nextLine();
         

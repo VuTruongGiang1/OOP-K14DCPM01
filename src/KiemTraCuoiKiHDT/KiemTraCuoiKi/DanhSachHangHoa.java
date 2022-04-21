@@ -272,7 +272,7 @@ public class DanhSachHangHoa {
                 matHangDienMay += 1;
                 giaTriHangDienMay += hangHoa.getDonGia()*hangHoa.getSoLuongTonkho()*1.1;
                 tonHangDienMay += hangHoa.getSoLuongTonkho();
-                if(!hangHoa.getDanhGia().equalsIgnoreCase("khong co")) {
+                if(!hangHoa.getDanhGia().equalsIgnoreCase(" khong co")) {
                     danhGiaHangDienMay +=1;
                 }
             }
@@ -280,7 +280,7 @@ public class DanhSachHangHoa {
                 matHangSanhSu += 1;
                 giaTriHangSanhSu += hangHoa.getDonGia()*hangHoa.getSoLuongTonkho()*1.1;
                 tonHangSanhSu += hangHoa.getSoLuongTonkho();
-                if(!hangHoa.getDanhGia().equalsIgnoreCase("khong co")) {
+                if(!hangHoa.getDanhGia().equalsIgnoreCase(" khong co")) {
                     danhGiaHangSanhSu +=1;
                 }
             }
@@ -288,7 +288,7 @@ public class DanhSachHangHoa {
                 matHangThucPham += 1;
                 giaTriHangThucPham += hangHoa.getDonGia()*hangHoa.getSoLuongTonkho()*1.05;
                 tonHangThucPham += hangHoa.getSoLuongTonkho();
-                if(!hangHoa.getDanhGia().equalsIgnoreCase("khong co")){
+                if(!hangHoa.getDanhGia().equalsIgnoreCase(" khong co")){
                     danhGiaHangThucPham +=1;
                 }
             }

@@ -41,7 +41,7 @@ public abstract class HangHoa {
  
     @Override
     public String toString() {
-        return "Ten hang: " +getTenHang()+ "Loai hang: " +getLoaiHang()+ "Ma hang: " +getMaHang()+ "So luong ton: " +getSoLuongTonkho()+ "Don gia: " +getDonGia();
+        return "Ten hang: " +getTenHang()+"  " + "Loai hang: " +getLoaiHang()+"  " + "Ma hang: " +getMaHang()+"  " + "So luong ton: " +getSoLuongTonkho()+ "  " +"Don gia: " +getDonGia();
     }
 
 }
