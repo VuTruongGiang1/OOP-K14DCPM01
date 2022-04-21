@@ -23,19 +23,19 @@ public class HangDienMay extends HangHoa{
     public double getThue() {
         return getDonGia()*0.1;
     }
-    
+
     @Override
     public String getDanhGia() {
-        String d = "không có";
+        String d = "khong co";
         if(getSoLuongTonkho() < 3)
         {
-            d = "bán được";
+            d = "ban duoc";
         }
         return d;
     }
  
     @Override
     public String toString() {
-        return super.toString()+ "Thời gian bào hành (tháng): " +gettGBaoHanh()+ "Công suất KW: " +getCongSuatKW()+"Thuế: "+getThue()+ "Đánh giá hàng điện máy: " +getDanhGia();
+        return super.toString()+ "Thoi gian bao hanh (thang): " +gettGBaoHanh()+ "Cong suat KW: " +getCongSuatKW()+"Thue: "+getThue()+ "Danh gia hang dien may: " +getDanhGia();
     }
 }

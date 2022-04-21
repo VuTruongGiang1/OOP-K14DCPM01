@@ -35,13 +35,13 @@ public abstract class HangHoa {
     public double getDonGia() {
         return donGia;
     }
-    
+
     public abstract double getThue();
     public abstract String getDanhGia();
  
     @Override
     public String toString() {
-        return "Tên hàng: " +getTenHang()+ "Loại hàng: " +getLoaiHang()+ "Mã hàng: " +getMaHang()+ "Số lượng tồn: " +getSoLuongTonkho()+ "Đơn giá: " +getDonGia();
+        return "Ten hang: " +getTenHang()+ "Loai hang: " +getLoaiHang()+ "Ma hang: " +getMaHang()+ "So luong ton: " +getSoLuongTonkho()+ "Don gia: " +getDonGia();
     }
 
 }

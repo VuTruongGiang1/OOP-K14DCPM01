@@ -29,17 +29,17 @@ public class HangSanhSu extends HangHoa{
 
     @Override
     public String getDanhGia() {
-        String d = "không có";
+        String d = "khong co";
         if(getSoLuongTonkho() > 50 && ( new Date().getTime() - ngayNhapKho.getTime() )/100000000 >10)
         {
-            d = "bán chậm";
+            d = "ban cham";
         }
         return d;
     }
-    
+
     @Override
     public String toString() {
         String str = DanhSachHangHoa.simpleDateFormat.format(getNgayNhapKho());
-        return super.toString()+ "Nhà sản xuất: " +getNhaSanXuat()+ "Ngày nhập kho: " +str+ "Thuế: " +getThue()+ "Đánh giá hàng sành sứ: " +getDanhGia();
+        return super.toString()+ "Nha san xuat: " +getNhaSanXuat()+ "Ngay nhap kho: " +str+ "Thue: " +getThue()+ "Danh gia hang sanh su: " +getDanhGia();
     }
 }

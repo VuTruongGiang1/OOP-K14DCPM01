@@ -34,10 +34,10 @@ public class HangThucPham extends HangHoa{
 
     @Override
     public String getDanhGia() {
-        String d = "Không có";
+        String d = "Khong co";
         if(getSoLuongTonkho() != 0 && ngayHetHan.before(new Date()))
         {
-            d = "khó bán";
+            d = "kho ban";
         }
         return d;
     }
@@ -46,6 +46,6 @@ public class HangThucPham extends HangHoa{
     public String toString() {
         String str1 = DanhSachHangHoa.simpleDateFormat.format(getNgaySX());
         String str2 = DanhSachHangHoa.simpleDateFormat.format(getNgayHetHan());   
-        return super.toString()+ "Ngày sản xuất: " +str1+ "Ngày hết hạn: " +str2+ "Nhà cung cấp: "+getNhaCungCap()+ "Thuế: " +getThue()+ "Đánh giá: " +getDanhGia();
+        return super.toString()+ "Ngay san xuat: " +str1+ "Ngay het han: " +str2+ "Nha cung cap: "+getNhaCungCap()+ "Thue: " +getThue()+ "Danh gia: " +getDanhGia();
     }
 }
