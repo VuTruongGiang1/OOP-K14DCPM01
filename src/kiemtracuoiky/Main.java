@@ -29,7 +29,7 @@ public class Main {
                     case 1: themHangHoa(); break;
                     case 2: xoaHagHoa(); break;
                     case 3: suaHangHoa(); break;
-                    case 4: inDanhSachHangHoa(); break;
+                    case 4: inDanhSachHangHoa(null, null, null); break;
                     case 5: timKiemTheoMaHang(); break;
                     case 6: timKiemTheoTenhang(); break;
                     default: System.out.println("Chon sai roi!!!!");
@@ -46,22 +46,33 @@ public class Main {
     private static void timKiemTheoTenhang() {
     }
 
-    public static void inDanhSachHangHoa() {
+    public static void inDanhSachHangHoa(HangDienMay a, HangSanhSu b, HangThucPham c) {
         // TODO Auto-generated method stub
-        hangThucPham(hangThucPhams);
-    }
+        HangThucPham hangThucPham = new HangThucPham();
+        //HangDienMay hangDienMay = new HangDienMay();
+        //HangSanhSu hangSanhSu = new HangSanhSu();
 
-    private static void hangThucPham(ArrayList<HangThucPham> hangThucPhams) {
-        return;
+        hangThucPham.inDanhSachHangHoa();
+
+        HangSanhSu hangSanhSu = new HangSanhSu();
+        hangSanhSu.inDanhSachHangHoa();
     }
 
     private static void suaHangHoa() {
     }
 
     private static void xoaHagHoa() {
+        HangThucPham hangThucPham_1 = new HangThucPham();
+        hangThucPham_1.xoaHagHoa();
     }
 
     private static void themHangHoa() {
+        HangDienMay hangDienMay = new HangDienMay();
+        hangDienMay.themHangHoa();
+        HangThucPham hangThucPham = new HangThucPham();
+        hangThucPham.themHangHoa();
+        HangSanhSu hangSanhSu = new HangSanhSu();
+        hangSanhSu.themHangHoa();
     }
     
 }

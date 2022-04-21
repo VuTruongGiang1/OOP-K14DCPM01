@@ -22,13 +22,15 @@ public class DanhSachHangHoa {
         return hangSanhSu;
     }
 
-    public void them(HangHoa hangHoa){
-        danhSach.add(hangHoa);
+    public void themHangHoa(HangThucPham hangThucPham, HangDienMay hangDienMay, HangSanhSu hangSanhSu){
+        danhSach.add(hangThucPham);
+        danhSach.add(hangDienMay);
+        danhSach.add(hangSanhSu);
     }
 
     public void inDanhSach(){
-        for (HangHoa hangHoa : danhSach) {
-            System.out.println(hangHoa);
+        for (HangHoa hangThucPham : danhSach) {
+            System.out.println(hangThucPham);
         }
     }
 
