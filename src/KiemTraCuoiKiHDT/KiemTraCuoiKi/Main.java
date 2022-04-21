@@ -20,14 +20,14 @@ public class Main {
     static void menu()
     {
         System.out.println("============MENU============");
-        System.out.println("1.Thêm hàng");
-        System.out.println("2.Xuất hàng");
+        System.out.println("1.Thêm hàng hóa");
+        System.out.println("2.Xuất hàng hóa");
         System.out.println("3.Tìm kiếm hàng hóa theo mã");
         System.out.println("4.Xóa hàng hóa theo mã");
         System.out.println("5.Sửa hàng hóa theo mã");
-        System.out.println("6.sắp xếp hóa tăng dần theo đơn giá");
-        System.out.println("7.sắp xếp hóa giảm dần theo đơn giá");
-        System.out.println("8.Thống kê");
+        System.out.println("6.Sắp xếp hàng hóa tăng dần theo đơn giá");
+        System.out.println("7.Sắp xếp hàng hóa giảm dần theo đơn giá");
+        System.out.println("8.Thống kê hàng hóa");
         System.out.println("============MENU============");
         System.out.print("Nhập số: ");
         String n = DanhSachHangHoa.chu.nextLine();
@@ -44,7 +44,7 @@ public class Main {
             case "8": thongKe(); break;
             default:
             {
-                System.out.println("Dữ liệu không đúng");
+                System.out.println("Dữ liệu nhập không đúng");
                 nhanEnterDeTiepTuc();
                 menu();
                 break;
@@ -58,23 +58,29 @@ public class Main {
         System.out.println("Nhấn enter để tiếp tục");
         DanhSachHangHoa.chu.nextLine();
     }
+
+    //Thêm hàng hóa 
     static void themHang()
     {
-        String d=null;
+        String d = null;
         do{
             quanLiDanhSachHangHoa.them(quanLiDanhSachHangHoa.nhapHangHoaKhongCoMa(quanLiDanhSachHangHoa.nhapMaHangHoa()));
             System.out.print("Nhập tiếp (y/n): ");
-            d=DanhSachHangHoa.chu.nextLine();
+            d = DanhSachHangHoa.chu.nextLine();
         }while(d.equalsIgnoreCase("y"));
         nhanEnterDeTiepTuc();
         menu();
     }
+
+    //Xuất hàng hóa 
     static void xuatHang()
     {
         quanLiDanhSachHangHoa.xuat();
         nhanEnterDeTiepTuc();
         menu();
     }
+
+    //Tìm hàng hóa 
     static void timHang(){
         String maHang;
         System.out.print("Nhập mã hàng cần tìm: ");
@@ -83,6 +89,8 @@ public class Main {
         nhanEnterDeTiepTuc();
         menu();
     }
+
+    //Xóa hàng hóa 
     static void xoaHang()
     {
         System.out.print("Nhập mã hàng hóa cần xóa: ");
@@ -91,6 +99,8 @@ public class Main {
         nhanEnterDeTiepTuc();
         menu();
     }
+
+    //Sửa hàng hóa 
     static void sua()
     {
         System.out.print("Nhập mã hàng hóa cần sửa: ");
@@ -99,17 +109,22 @@ public class Main {
         nhanEnterDeTiepTuc();
         menu();
     }
+
+    //Sắp xếp hàng hóa tăng dần theo đơn giá 
     static void sapXepTangDanTheoGia(){
         quanLiDanhSachHangHoa.sapXepTangDanTheoGia();
         nhanEnterDeTiepTuc();
         menu();
     }
+
+    //Sắp xếp hàng hóa giảm dần theo đơn giá 
     static void sapXepGiamDanTheoGia(){
         quanLiDanhSachHangHoa.sapXepGiamDanTheoGia();
         nhanEnterDeTiepTuc();
         menu();
     }
-     
+    
+    //Thống kê số lượng hàng hóa 
     static void thongKe(){
         quanLiDanhSachHangHoa.thongKe();
         nhanEnterDeTiepTuc();

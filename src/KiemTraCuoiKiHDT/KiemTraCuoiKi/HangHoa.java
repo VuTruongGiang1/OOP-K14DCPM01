@@ -8,8 +8,7 @@ public abstract class HangHoa {
     private double donGia;
  
     public HangHoa(){}
-    public HangHoa(String tenHang, String loaiHang, String maHang, int soLuongTon, double donGia) 
-    {
+    public HangHoa(String tenHang, String loaiHang, String maHang, int soLuongTon, double donGia) {
         this.tenHang = tenHang;
         this.loaiHang = loaiHang;
         this.maHang = maHang;
@@ -17,26 +16,26 @@ public abstract class HangHoa {
         this.donGia = donGia;
     }
  
-    public String getTenHang() 
-    {
+    public String getTenHang() {
         return tenHang;
     }
-    public String getLoaiHang() 
-    {
+
+    public String getLoaiHang() {
         return loaiHang;
     }
-    public String getMaHang() 
-    {
+
+    public String getMaHang() {
         return maHang;
     }
-    public int getSoLuongTonkho() 
-    {
+
+    public int getSoLuongTonkho() {
         return soLuongTonkho;
     }
-    public double getDonGia() 
-    {
+
+    public double getDonGia() {
         return donGia;
     }
+    
     public abstract double getThue();
     public abstract String getDanhGia();
  

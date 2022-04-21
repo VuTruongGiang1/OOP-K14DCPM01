@@ -17,14 +17,16 @@ public class HangSanhSu extends HangHoa{
     public String getNhaSanXuat() {
         return nhaSanXuat;
     }
+
     public Date getNgayNhapKho() {
         return ngayNhapKho;
     }
+
     @Override
-    public double getThue() 
-    {
+    public double getThue() {
         return getDonGia() * 0.1;
     }
+
     @Override
     public String getDanhGia() {
         String d = "không có";
@@ -34,6 +36,7 @@ public class HangSanhSu extends HangHoa{
         }
         return d;
     }
+    
     @Override
     public String toString() {
         String str = DanhSachHangHoa.simpleDateFormat.format(getNgayNhapKho());

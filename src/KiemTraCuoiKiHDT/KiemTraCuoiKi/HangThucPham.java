@@ -18,17 +18,20 @@ public class HangThucPham extends HangHoa{
     public Date getNgaySX() {
         return ngaySX;
     }
+
     public Date getNgayHetHan() {
         return ngayHetHan;
     }
+
     public String getNhaCungCap() {
         return nhaCungCap;
     }
+
     @Override
-    public double getThue() 
-    {
+    public double getThue() {
         return getDonGia() * 0.05;
     }
+
     @Override
     public String getDanhGia() {
         String d = "Không có";

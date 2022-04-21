@@ -15,8 +15,7 @@ public class DanhSachHangHoa {
     public static Scanner so = new Scanner(System.in);
     public static Scanner chu = new Scanner(System.in);
  
-    public void duLieuCoSan() throws ParseException  
-    {
+    public void duLieuCoSan() throws ParseException {
         list.add(new HangThucPham("Thịt", "Thực phẩm", "001", 10, 25.000, simpleDateFormat.parse("3/7/2020"), simpleDateFormat.parse("5/5/2022"), "Big C"));
 
         list.add(new HangThucPham("Cá", "Thực phẩm", "002", 20, 20.000, simpleDateFormat.parse("16/4/2020"), simpleDateFormat.parse("8/4/2022"), "Big C"));
@@ -40,8 +39,7 @@ public class DanhSachHangHoa {
         list.add(new HangSanhSu("chén", "Sành sứ", "011", 300, 15.000, "Gốm bay nhà", simpleDateFormat.parse("1/1/2022")));
     }
  
-    public HangHoa nhapHangHoaKhongCoMa(String maHang)
-    {
+    public HangHoa nhapHangHoaKhongCoMa(String maHang){
         HangHoa hangHoa = null;
         try {
             String tenHang=null; 
@@ -49,7 +47,7 @@ public class DanhSachHangHoa {
                 System.out.print("Tên hàng: ");
                 tenHang = chu.nextLine();
                 if(tenHang.equalsIgnoreCase("")){
-                    System.out.println("Tên hàng không được để rỗng");
+                    System.out.println("Tên hàng không được để trống");
                 }
             }while(tenHang.equalsIgnoreCase(""));
             int soLuongTonKho=0; 
@@ -72,12 +70,13 @@ public class DanhSachHangHoa {
             }while(donGia<=0);
             int number=0; 
             do{
-                System.out.print("Loại hàng: 1 (Thực phẩm) | 2 (Điện máy) | 3 (Sành sứ) : ");
+                System.out.print("Loại hàng: 1.(Thực phẩm) | 2.(Điện máy) | 3.(Sành sứ) : ");
                 number = so.nextInt();
                 if(number!=1 && number!=2 && number!=3){
-                    System.out.println("Thông tin nhập không phù hợp, vui lòng thử lại");
+                    System.out.println("Thông tin nhập không phù hợp, vui lòng nhập lại!!!");
                 }
             }while(number!=1 && number!=2 && number!=3);
+            
             if(number==1) 
             {
                 String loaiHang="Thực phẩm";
@@ -128,18 +127,21 @@ public class DanhSachHangHoa {
             
             }
         } catch (Exception e) {
-            so=new Scanner(System.in);
-            System.out.println("Chương trình bị lỗi do bạn nhập chữ vào chỗ cần nhập số, vui lòng thử lại");
+            so = new Scanner(System.in);
+            System.out.println("Chương trình bị lỗi do bạn nhập chữ vào phần số, vui lòng thử lại!!!");
             e.printStackTrace();
         }
         return hangHoa;
     }
-    public void them(HangHoa hangHoa)
-    {
+
+    //Thêm 
+    public void them(HangHoa hangHoa) {
         if(hangHoa!=null){
             this.list.add(hangHoa);
         }
     }
+
+    //Kiểm tra 
     public boolean kiemTraMaHangTrung(String maHang){
         boolean kt = false;
         for (HangHoa hangHoa : list) {
@@ -149,57 +151,57 @@ public class DanhSachHangHoa {
         }
         return kt;
     }
- 
-    public void xuat()
-    {
-        for(HangHoa hangHoa : list)
-        {
+    
+    //Xuất 
+    public void xuat() {
+        for(HangHoa hangHoa : list) {
             System.out.println(hangHoa);
             System.out.println();
         }
     }
- 
-    public HangHoa timHangTheoMa(String maHang)
-    {
+    
+    //Tìm hàng theo mã hàng 
+    public HangHoa timHangTheoMa(String maHang) {
         HangHoa hangHoa = null;
-        for(HangHoa hangHoa2 : list)
-        {
-            if(hangHoa2.getMaHang().toString().equalsIgnoreCase(maHang))
-            {
+        for(HangHoa hangHoa2 : list) {
+            if(hangHoa2.getMaHang().toString().equalsIgnoreCase(maHang)) {
                 hangHoa = hangHoa2;
             }
         }
-        if(hangHoa==null){
-            System.out.println("Không tìm thấy");
+        if(hangHoa==null) {
+            System.out.println("Không tìm thấy hàng hóa");
         }
         return hangHoa;
     }
-    public void traVeKetQua(HangHoa hangHoa)
-    {
-        if(hangHoa!=null){
+
+    //Trả về kết quả 
+    public void traVeKetQua(HangHoa hangHoa) {
+        if(hangHoa!=null) {
             System.out.println(hangHoa);
         }
     }
- 
-    public void xoa(HangHoa hangHoa)
-    {
-        if(hangHoa!=null){
-            System.out.println("Đã xóa");
+    
+    //Xóa 
+    public void xoa(HangHoa hangHoa) {
+        if(hangHoa!=null) {
+            System.out.println("Đã xóa hàng khỏi kho!");
         }
         this.list.remove(hangHoa);
     }
-    public String nhapMaHangHoa(){
+
+    //Nhập mã hàng 
+    public String nhapMaHangHoa() {
         String maHang=null; 
         boolean kiemTraMa=true;
         do{
             try {
                 System.out.print("Mã hàng: ");
                 maHang = chu.nextLine();
-                kiemTraMa=kiemTraMaHangTrung(maHang);
+                kiemTraMa = kiemTraMaHangTrung(maHang);
                 if(maHang.equalsIgnoreCase("")){
-                System.out.println("Mã hàng không được để rỗng");
+                System.out.println("Mã hàng không được để trống");
                 }
-                else if(kiemTraMa==true){
+                else if(kiemTraMa == true){
                     System.out.println("Mã hàng này đã tồn tại, hãy nhập mã hàng khác");
                 }
             }catch (Exception e) {
@@ -208,31 +210,33 @@ public class DanhSachHangHoa {
         }while(maHang.equalsIgnoreCase("") || kiemTraMa==true);
         return maHang;
     }
-    public int timViTriHangHoa(HangHoa hangHoa)
-    {
+
+    //Tìm vị trí 
+    public int timViTriHangHoa(HangHoa hangHoa) {
         int viTri = -1;
         viTri = this.list.indexOf(hangHoa);
         return viTri;
     }
-    public void suaHangHoa(String maHang)
-    {
-        int viTri= timViTriHangHoa(timHangTheoMa(maHang));
-        if(viTri == -1)
-        {
-            System.out.println(" Không tìm thấy ");
+
+    //Sửa hàng theo vị trí đã tìm 
+    public void suaHangHoa(String maHang) {
+        int viTri = timViTriHangHoa(timHangTheoMa(maHang));
+        if(viTri == -1) {
+            System.out.println(" Không tìm thấy hàng ");
         }
         else
         {
             HangHoa hangHoa = nhapHangHoaKhongCoMa(maHang);
-            if(hangHoa!=null){
+            if(hangHoa!=null) {
                 this.list.set(viTri, hangHoa);
-                System.out.println("Đã sửa");
+                System.out.println("Đã sửa hàng thành công");
             }
         }
     }
- 
-    public void sapXepTangDanTheoGia(){ 
-        Comparator<HangHoa> comp = new Comparator<HangHoa>(){
+    
+    //Sắp xếp 
+    public void sapXepTangDanTheoGia() { 
+        Comparator<HangHoa> comp = new Comparator<HangHoa>() {
             public int compare(HangHoa o1, HangHoa o2) {
                 return Double.compare(o1.getDonGia(), o2.getDonGia());
             }
@@ -240,42 +244,43 @@ public class DanhSachHangHoa {
         Collections.sort(list, comp);
         System.out.println("Đã sắp xếp");
     }
-    public void sapXepGiamDanTheoGia(){
+
+    //Sắp xếp 
+    public void sapXepGiamDanTheoGia() {
         sapXepTangDanTheoGia();
         Collections.reverse(list);
     }
  
- 
+    //Thống kê hàng 
     public void thongKe(){
-        int matHangThucPham=0;
-        int matHangDienMay=0;
-        int matHangSanhSu=0;
-        double giaTriHangThucPham=0;
-        double giaTriHangDienMay=0;
-        double giaTriHangSanhSu=0;
-        int tonHangThucPham=0;
-        int tonHangDienMay=0;
-        int tonHangSanhSu=0;
-        int danhGiaHangThucPham=0;
-        int danhGiaHangDienMay=0;
-        int danhGiaHangSanhSu=0;
-        for(HangHoa hangHoa : list)
-        {
-            if(hangHoa instanceof HangDienMay)
-            {
+        int matHangThucPham = 0;
+        int matHangDienMay = 0;
+        int matHangSanhSu = 0;
+        double giaTriHangThucPham = 0;
+        double giaTriHangDienMay = 0;
+        double giaTriHangSanhSu = 0;
+        int tonHangThucPham = 0;
+        int tonHangDienMay = 0;
+        int tonHangSanhSu = 0;
+        int danhGiaHangThucPham = 0;
+        int danhGiaHangDienMay = 0;
+        int danhGiaHangSanhSu = 0;
+
+
+        for(HangHoa hangHoa : list) {
+            if(hangHoa instanceof HangDienMay) {
                 matHangDienMay += 1;
                 giaTriHangDienMay += hangHoa.getDonGia()*hangHoa.getSoLuongTonkho()*1.1;
                 tonHangDienMay += hangHoa.getSoLuongTonkho();
-                if(!hangHoa.getDanhGia().equalsIgnoreCase("không có")){
+                if(!hangHoa.getDanhGia().equalsIgnoreCase("không có")) {
                     danhGiaHangDienMay +=1;
                 }
             }
-            else if(hangHoa instanceof HangSanhSu)
-            {
+            else if(hangHoa instanceof HangSanhSu) {
                 matHangSanhSu += 1;
                 giaTriHangSanhSu += hangHoa.getDonGia()*hangHoa.getSoLuongTonkho()*1.1;
                 tonHangSanhSu += hangHoa.getSoLuongTonkho();
-                if(!hangHoa.getDanhGia().equalsIgnoreCase("không có")){
+                if(!hangHoa.getDanhGia().equalsIgnoreCase("không có")) {
                     danhGiaHangSanhSu +=1;
                 }
             }
@@ -288,20 +293,22 @@ public class DanhSachHangHoa {
                 }
             }
         }
-        System.out.println("==== Mặt hàng thực phẩm ====");
-        System.out.println("Tổng số lượng mặt hàng: "+matHangThucPham);
-        System.out.println("Tổng giá trị: "+giaTriHangThucPham);
-        System.out.println("Tổng số lượng hàng tồn: "+tonHangThucPham);
+
+
+        System.out.println("===== Hàng thực phẩm =====");
+        System.out.println("Tổng số lượng hàng trong kho: "+matHangThucPham);
+        System.out.println("Tổng giá trị hàng trong kho: "+giaTriHangThucPham);
+        System.out.println("Tổng số lượng hàng tồn trong kho: "+tonHangThucPham);
         System.out.println("Tổng số lượng hàng đánh giá khó bán: "+danhGiaHangThucPham);
-        System.out.println("==== Mặt hàng điện máy ====");
-        System.out.println("Tổng số lượng mặt hàng: "+matHangDienMay);
-        System.out.println("Tổng giá trị: "+giaTriHangDienMay);
-        System.out.println("Tổng số lượng hàng tồn: "+tonHangDienMay);
+        System.out.println("===== Hàng điện máy =====");
+        System.out.println("Tổng số lượng hàng trong kho: "+matHangDienMay);
+        System.out.println("Tổng giá trị hàng trong kho: "+giaTriHangDienMay);
+        System.out.println("Tổng số lượng hàng tồn kho: "+tonHangDienMay);
         System.out.println("Tổng số lượng hàng đánh giá bán được: "+danhGiaHangDienMay);
-        System.out.println("==== Mặt hàng sành sứ ====");
-        System.out.println("Tổng số lượng mặt hàng: "+matHangSanhSu);
-        System.out.println("Tổng giá trị: "+giaTriHangSanhSu);
-        System.out.println("Tổng số lượng hàng tồn: "+tonHangSanhSu);
+        System.out.println("===== Hàng sành sứ =====");
+        System.out.println("Tổng số lượng hàng trong kho: "+matHangSanhSu);
+        System.out.println("Tổng giá trị hàng trong kho: "+giaTriHangSanhSu);
+        System.out.println("Tổng số lượng hàng tồn kho: "+tonHangSanhSu);
         System.out.println("Tổng số lượng hàng đánh giá bán chậm: "+danhGiaHangSanhSu);
     }
 }

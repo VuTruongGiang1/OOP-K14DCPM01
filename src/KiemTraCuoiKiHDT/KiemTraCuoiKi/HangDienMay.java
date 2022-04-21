@@ -14,14 +14,16 @@ public class HangDienMay extends HangHoa{
     public double getCongSuatKW() {
         return congSuatKW;
     }
+
     public int gettGBaoHanh() {
         return tGBaoHanh;
     }
+
     @Override
-    public double getThue() 
-    {
+    public double getThue() {
         return getDonGia()*0.1;
     }
+    
     @Override
     public String getDanhGia() {
         String d = "không có";
